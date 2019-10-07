@@ -6,7 +6,6 @@ import java.util.function.Predicate;
 
 /**
  * @author Dong
- * @since V1.0
  */
 
 public class Test {
