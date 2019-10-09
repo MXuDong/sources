@@ -38,5 +38,7 @@ public class Test1 {
 ## 自己实现一次Lambda
 自定义接口、方法参数等，然后使用Lambda表达式。
 [使用Lambda](TestLambda.java)
+
 运行截图
+
 ![运行截图](TestLambda%20Result%201%20.png)
