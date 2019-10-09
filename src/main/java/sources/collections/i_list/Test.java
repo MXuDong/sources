@@ -1,4 +1,4 @@
-package day02;
+package sources.collections.i_list;
 
 import java.util.ArrayList;
 import java.util.Comparator;

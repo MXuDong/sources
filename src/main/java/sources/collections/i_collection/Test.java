@@ -1,4 +1,4 @@
-package day01;
+package sources.collections.i_collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
