@@ -120,4 +120,9 @@ public interface ListInterface<E> {
      * @return 数据值
      */
     E getE(int index);
+
+    /**
+     * 清楚链表数据
+     */
+    void clean();
 }
