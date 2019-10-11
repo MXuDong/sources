@@ -60,13 +60,6 @@ public interface ListInterface<E> {
      */
     E delete(int index);
 
-    /**
-     * 删除链表内全部指定数据，操作后，链表内不再具有指定数据
-     *
-     * @param e 指定数据
-     * @return 被删除的个数
-     */
-    int deleteAll(E e);
 
     /**
      * 修改指定位置的数据，如果指定没有数据，则不进行修改，且返回null
@@ -88,22 +81,6 @@ public interface ListInterface<E> {
      */
     boolean update(E oldValue, E newValue);
 
-    /**
-     * 将全部的oldValue更新为newValue
-     *
-     * @param oldValue 旧数据
-     * @param newValue 新数据
-     * @return 修改的数量
-     */
-    int updateAll(E oldValue, E newValue);
-
-    /**
-     * 统计链表内指定数据的个数
-     *
-     * @param e 指定数据
-     * @return 指定数据的个数
-     */
-    int count(E e);
 
     /**
      * 查找指定数据第一次出现的位置，如果没有指定数据则返回-1
