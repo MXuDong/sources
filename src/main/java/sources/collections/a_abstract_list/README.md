@@ -25,3 +25,26 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 
 ## private class Itr implements Iterator<E>
 迭代器
+
+迭代器内部如果需要实现快速失败（获取迭代器后，修改列表状态，会导致迭代器异常）。
+则需要在列表内部操作modCount。
+如果不需要，忽略即可，迭代器内部使用expectedCount保证迭代器正常。
+
+通过字段：lastRet保证一次只能remove一次。
+每次next（）方法会将lastRes置为cursor，然后cursor变动。
+发生remove操作后，lastRet置为-1，下次再次调用就会发生异常，以保证每次进删除最近的数据，而不会错删、多删。
+
+## private class ListItr extends Itr implements ListIterator<E>
+列表迭代器-双向迭代器
+
+在add方法中，存在添加数据后，lastRet被置为-1，因此此时删除是不可以的，即利用列表迭代器添加后立即删除的诡异操作是不可行的。
+
+# 同包类
+## class SubList<E> extends AbstractList<E>;
+非RandomAccess子列表，这种列表直接继承了AbstractList，本质上其实是包装了一个AbstractList。
+迭代器直接使用列表迭代器，列表迭代器又包装了传入的AbstractList的迭代器。
+
+操作此类时，会检测modCount，也就是说，操作此类后，尽量不要操作源列表。
+
+## class RandomAccessSubList<E> extends SubList<E> implements RandomAccess;
+直接包装SubList
