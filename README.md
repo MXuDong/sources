@@ -2,6 +2,7 @@
 
 1. [Java 源码阅读](src/main/java/sources/README.md)
 2. [Java 设计原则](src/main/java/principle/README.md)
+3. [Java 设计模式](src/main/java/design_pattern/README.md)
 3. [Java 数据结构](src/main/java/data_struct/README.md)
 4. [Java 版本特性](src/main/java/version_feature/README.md)
 5. [Java 常用框架](src/main/java/framework/README.md)
