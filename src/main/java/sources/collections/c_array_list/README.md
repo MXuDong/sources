@@ -55,6 +55,7 @@ new ArrayList() 使用的数组是 DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
 因此可以看出，不同的构造方法对于实例内部数据数组是有影响的。
 #### 影响在哪里
 首先看一下文档原文
+
     Shared empty array instance used for default 
     sized empty instances. We distinguish this 
     from EMPTY_ELEMENTDATA to know how much to 
