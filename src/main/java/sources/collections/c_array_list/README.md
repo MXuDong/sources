@@ -121,3 +121,40 @@ private void ensureExplicitCapacity(int minCapacity) {
 对于实例数量有限，而且元素个数也不是特别多，那就使用ArrayList()进行构造。
 
 如果实例数量有限，元素个数还很多，请用ArrayList(int bigCount);进行构造
+
+## 部分方法
+###  private boolean batchRemove(Collection<?> c, boolean complement);
+```java
+public class ArrayList{
+    private boolean batchRemove(Collection<?> c, boolean complement) {
+        final Object[] elementData = this.elementData;
+        int r = 0, w = 0;
+        boolean modified = false;
+        try {
+            for (; r < size; r++)
+                //当complement为true,则c中存在则保留 - retainAll
+                //当complement为false，则c中不存在则保留 - removeAll
+                if (c.contains(elementData[r]) == complement)
+                    //保留语句，保留第r位元素
+                    elementData[w++] = elementData[r];
+        } finally {
+            //最后结果处理，保证大小同时，保证不存在数据为null，让GC正常工作
+            if (r != size) {
+                System.arraycopy(elementData, r,
+                                 elementData, w,
+                                 size - r);
+                w += size - r;
+            }
+            if (w != size) {
+                // clear to let GC do its work
+                for (int i = w; i < size; i++)
+                    elementData[i] = null;
+                modCount += size - w;
+                size = w;
+                modified = true;
+            }
+        }
+        return modified;
+    }
+}
+```
