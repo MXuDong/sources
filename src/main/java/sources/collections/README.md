@@ -6,3 +6,4 @@
 3. [AbstractCollection 抽象类](a_abstract_collection/README.md)
 4. [AbstractList 抽象类](a_abstract_list/README.md)
 5. [ArrayList 类](c_array_list/README.md)
+6. [AbstractSequentialList](a_abstract_sequential_list/README.md)
