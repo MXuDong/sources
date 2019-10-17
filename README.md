@@ -7,7 +7,7 @@
 4. [Java 版本特性](src/main/java/version_feature/README.md)
 5. [Java 常用框架](src/main/java/framework/README.md)
 6. [Java 常用工具](src/main/java/tools/README.md)
-7. [计算机网络]
+7. [计算机网络](src/main/java/computer_network/README.md)
 8. [算法]
 9. [操作系统]
 10. [多线程]
